@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 10:47:56 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/07/22 14:53:11 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/07/26 11:14:02 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	keybutton(int keycode, t_data *data)
 {
 	t_data	img;
 
+	mlx_clear_window(data->mlx, data->win);
 	if (keycode == 53)
 	{
 		mlx_destroy_window(data->mlx, data->win);
@@ -43,25 +44,25 @@ int	keybutton(int keycode, t_data *data)
 	{
 		mlx_pixel_put(&img, data->win, (*data).x, (*data).y, 0xFFFF00);
 		(*data).x += 10;
-		printf("right button%d\n", (*data).x);
+		printf("right button %d\n", (*data).x);
 	}
-	if (keycode == 123)
+	else if (keycode == 123)
 	{
 		mlx_pixel_put(&img, data->win, (*data).x, (*data).y, 0xFFFF00);
 		(*data).x -= 10;
-		printf("left button%d\n", (*data).x);
+		printf("left button %d\n", (*data).x);
 	}
-	if (keycode == 126)
+	else if (keycode == 126)
 	{
 		mlx_pixel_put(&img, data->win, (*data).x, (*data).y, 0xFFFF00);
 		(*data).y -= 10;
-		printf("up button%d\n", (*data).y);
+		printf("up button %d\n", (*data).y);
 	}
-	if (keycode == 125)
+	else if (keycode == 125)
 	{
 		mlx_pixel_put(&img, data->win, (*data).x, (*data).y, 0xFFFF00);
 		(*data).y += 10;
-		printf("down button%d\n", (*data).y);
+		printf("down button %d\n", (*data).y);
 	}
 	return (0);
 }
@@ -77,14 +78,15 @@ int	main(void)
 
 	data.mlx = mlx_init();
 	data.win = mlx_new_window(data.mlx, 1920, 1080, "Hello world!");
-	img.img = mlx_new_image(data.mlx, 1920, 1080);
 	data.relative_path = "./test.xpm";
-	// img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, 
-				// &img.line_length, &img.endian);
 	x = 960;
 	y = 480;
 	a = 0;
 	b = 0;
+	// img.img = mlx_new_image(data.mlx, 1920, 1080);
+	// img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, 
+				// &img.line_length, &img.endian);
+
 	while (b != 200)
 	{
 		mlx_pixel_put(&img, data.win, x, y, 0x00FF0000);

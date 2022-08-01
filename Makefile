@@ -6,15 +6,15 @@
 #    By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/21 11:38:00 by lwilliam          #+#    #+#              #
-#    Updated: 2022/07/22 14:00:53 by lwilliam         ###   ########.fr        #
+#    Updated: 2022/07/29 14:24:47 by lwilliam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-OBJ = main.c
+OBJ = image.c
 
-CC = gcc
+CC = gcc 
 
 FLAGS = -Wall -Wextra -Werror
 
