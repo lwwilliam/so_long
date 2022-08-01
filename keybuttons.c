@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:23:26 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/01 12:59:32 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/01 13:29:18 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ int	right_funct(t_vars *vars)
 	return (0);
 }
 
-int	key_read(int key)
+int	key_read(int key, t_vars *vars)
 {
-	t_vars	*vars;
-
 	vars->kkk = 0;
 	if (key == 1)
 		vars->kkk = 1;
@@ -57,7 +55,6 @@ int	keybutton(int keycode, t_vars *vars)
 	if (keycode == 13)
 		if (vars->y > 0)
 			vars->y -= 64;
-	key_read(keycode);
-	printf("key: %d\n", vars->kkk);
+	key_read(keycode, vars);
 	return (0);
 }

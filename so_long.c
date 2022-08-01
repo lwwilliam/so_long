@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:08:30 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/01 12:34:59 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/01 16:32:31 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	map(t_vars *vars)
 		}
 		vars->b += 64;
 	}
+	enemy_placement(vars);
 	character(vars);
 	return (0);
 }
