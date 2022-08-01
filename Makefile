@@ -6,13 +6,13 @@
 #    By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/21 11:38:00 by lwilliam          #+#    #+#              #
-#    Updated: 2022/07/29 14:24:47 by lwilliam         ###   ########.fr        #
+#    Updated: 2022/08/01 11:23:57 by lwilliam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-OBJ = image.c
+OBJ = so_long.c char_ani.c keybuttons.c
 
 CC = gcc 
 
