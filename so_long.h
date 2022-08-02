@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:03:20 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/01 18:05:47 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/02 12:08:12 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_vars {
 	void	*img;
 	void	*img2;
 	void	*enemy_img;
+	void	*wall;
 	void	*mlx;
 	void	*win;
 	char	*addr;
@@ -52,10 +53,13 @@ typedef struct s_vars {
 	int		a;
 	int		b;
 	int		kkk;
+	int		w_x;
+	int		w_y;
 }				t_vars;
 
 int	animation(t_vars *vars);
 int	character(t_vars *vars);
+int	wasd_animation(t_vars *vars);
 int	map(t_vars *vars);
 int	exit_button(t_vars *vars);
 int	win_init(t_vars *vars);
@@ -64,5 +68,6 @@ int	key_read(int key, t_vars *vars);
 int	enemy(t_vars *vars);
 int	enemy_placement(t_vars *vars);
 int	wall_placement(t_vars *vars);
+int	wall_coords(t_vars *vars);
 
 #endif

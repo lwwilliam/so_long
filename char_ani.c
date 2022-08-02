@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:08:57 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/01 17:10:14 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/02 12:28:00 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,8 @@ int	d_animation(t_vars *vars)
 	return (0);
 }
 
-int	character(t_vars *vars)
+int	wasd_animation(t_vars *vars)
 {
-	vars->a = 0;
-	vars->b = 0;
 	if (vars->kkk == 3)
 		w_animation(vars);
 	if (vars->kkk == 4)
@@ -100,6 +98,13 @@ int	character(t_vars *vars)
 		s_animation(vars);
 	if (vars->kkk == 2)
 		d_animation(vars);
+	return (0);
+}
+
+int	character(t_vars *vars)
+{
+	vars->b = 0;
+	wasd_animation(vars);
 	while (vars->b != 1024)
 	{
 		vars->a = 0;
@@ -114,5 +119,6 @@ int	character(t_vars *vars)
 		}
 		vars->b += 64;
 	}
+	printf("%d %d\n", vars->x, vars->y);
 	return (0);
 }
