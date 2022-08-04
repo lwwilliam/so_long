@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:23:26 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/01 13:29:18 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/04 10:17:58 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,6 @@ int	exit_button(t_vars *vars)
 	mlx_destroy_window(vars->mlx, vars->win);
 	write(0, "Exit\n", 5);
 	exit(0);
-}
-
-int	right_funct(t_vars *vars)
-{
-	if (vars->x < 1856)
-		vars->x += 64;
-	return (0);
 }
 
 int	key_read(int key, t_vars *vars)
@@ -47,14 +40,11 @@ int	keybutton(int keycode, t_vars *vars)
 	if (keycode == 2)
 		right_funct(vars);
 	if (keycode == 0)
-		if (vars->x > 0)
-			vars->x -= 64;
+		left_funct(vars);
 	if (keycode == 1)
-		if (vars->y < 960)
-			vars->y += 64;
+		down_funct(vars);
 	if (keycode == 13)
-		if (vars->y > 0)
-			vars->y -= 64;
+		up_funct(vars);
 	key_read(keycode, vars);
 	return (0);
 }

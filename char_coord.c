@@ -1,52 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wall.c                                             :+:      :+:    :+:   */
+/*   char_coord.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 17:59:23 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/04 18:24:17 by lwilliam         ###   ########.fr       */
+/*   Created: 2022/08/02 15:02:39 by lwilliam          #+#    #+#             */
+/*   Updated: 2022/08/04 20:01:41 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	wall_placement(t_vars *vars)
-{
-	char	*wall_path;
-
-	vars->w_x = 0;
-	vars->w_y = 0;
-	vars->b = 0;
-	wall_path = WALL;
-	vars->wall = mlx_xpm_file_to_image(vars->mlx, wall_path,
-			&vars->img_width, &vars->img_height);
-	while (vars->w_x != 640 && vars->w_y != 640)
-	{
-		vars->w_x += 64;
-		vars->w_y += 64;
-	}
-	wall_coords(vars);
-	return (0);
-}
-
-int	wall_coords(t_vars *vars)
+int	character(t_vars *vars)
 {
 	vars->b = 0;
+	wasd_animation(vars);
 	while (vars->b != vars->pixel_h)
 	{
 		vars->a = 0;
 		while (vars->a != vars->pixel_w)
 		{
-			if ((vars->a == vars->w_x && vars->b == vars->w_y))
+			if (vars->a == vars->x && vars->b == vars->y)
 			{
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->wall,
+				vars->img = mlx_xpm_file_to_image(vars->mlx, vars->xpm_path,
+						&vars->img_width, &vars->img_height);
+				mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 					vars->a, vars->b);
 			}
 			vars->a += 64;
 		}
 		vars->b += 64;
 	}
+	printf("%d , %d\n", vars->x, vars->y);
 	return (0);
 }
