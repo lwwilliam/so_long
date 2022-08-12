@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:03:20 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/04 21:07:59 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/13 00:23:53 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include "./gnl/get_next_line.h"
 
 # define MAP "./xpm/grass.xpm"
 # define CLOSE "./xpm/close.xpm"
@@ -31,9 +32,11 @@
 # define OPEN8 "./xpm/open8.xpm"
 # define GHOST1 "./xpm/g1.xpm"
 # define GHOST2 "./xpm/g2.xpm"
+# define COIN1 "./xpm/coin1.xpm"
+# define COIN2 "./xpm/coin2.xpm"
 # define WALL "./xpm/wall.xpm"
+# define EXIT "./xpm/exit.xpm"
 # define FRAME 8
-# define BUFFER_SIZE 10000
 
 // typedef struct s_xpm {
 // 	void	*close;
@@ -47,16 +50,19 @@
 // 	void	*open8;
 // }				t_xpm;
 
-typedef struct s_vars {
+typedef struct s_vars
+{
 	void	*img;
 	void	*img2;
 	void	*enemy_img;
+	void	*coin_img;
 	void	*wall;
 	void	*mlx;
 	void	*win;
 	char	*addr;
 	char	*xpm_path;
 	char	*enemy_path;
+	char	*coin_path;
 	int		img_width;
 	int		img_height;
 	int		x;
@@ -66,13 +72,29 @@ typedef struct s_vars {
 	int		kkk;
 	int		w_x;
 	int		w_y;
+	int		p2_x;
+	int		p2_y;
+	int		c_x;
+	int		c_y;
+	int		e_x;
+	int		e_y;
 	int		pixel_w;
 	int		pixel_h;
+	int		coin_collected;
+	int		coin;
 
 	int		map_w;
 	int		map_h;
-
-}				t_vars;
+	char	*line;
+	char	*map;
+	int		pos_x;
+	int		pos_y;
+	char	*dup;
+	char	*str;
+	int		str_pos;
+	int		n_of_m;
+	char	*map_name;
+}	t_vars;
 
 int		animation(t_vars *vars);
 int		character(t_vars *vars);
@@ -86,24 +108,36 @@ int		enemy(t_vars *vars);
 int		enemy_placement(t_vars *vars);
 int		wall_placement(t_vars *vars);
 int		wall_coords(t_vars *vars);
+int		coin(t_vars *vars);
+int		coin_placement(t_vars *vars);
 
 void	up_funct(t_vars *vars);
 void	down_funct(t_vars *vars);
 void	left_funct(t_vars *vars);
 void	right_funct(t_vars *vars);
+int		w_animation(t_vars *vars);
+int		a_animation(t_vars *vars);
+int		s_animation(t_vars *vars);
+int		d_animation(t_vars *vars);
+void	meth(t_vars *vars);
 
+char	*ft_strtrim(char const *s1, char const *set);
+int		resres(int e, int f);
 void	map_read(t_vars *vars);
 int		map_size(t_vars *vars);
 int		map_height(t_vars *vars);
-void	play_pos(t_vars *vars);
+void	array(t_vars *vars);
+void	ft_bzero(void *s, size_t n);
+void	item_pos(t_vars *vars);
+void	pos_formula(t_vars *vars);
+void	coin_take(t_vars *vars);
+void	duptostr(t_vars *vars);
+void	ft_putnbr(int nb);
+void	e_filter(t_vars *vars, int x);
+int		exit_placement(t_vars *vars);
+void	arguments(t_vars *vars, char **av, int ac);
+void	ft_putchar(char c);
 // void	xpm_init(t_vars *vars);
-
-char	*get_next_line(int fd);
-char	*ft_strdup(const char *s);
-char	*ft_strchr(const char *str, int y);
-size_t	ft_strlen(const char *str);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
-int		read_funct(int fd, char **buffer, int *x);
+// void	print_test(t_vars *vars);
 
 #endif

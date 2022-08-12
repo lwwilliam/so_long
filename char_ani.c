@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:08:57 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/02 15:02:38 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/05 14:23:20 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,13 @@ int	d_animation(t_vars *vars)
 
 int	wasd_animation(t_vars *vars)
 {
-	if (vars->kkk == 3)
+	if (vars->kkk == 3 || vars->kkk == 0)
 		w_animation(vars);
-	if (vars->kkk == 4)
+	else if (vars->kkk == 4 || vars->kkk == 0)
 		a_animation(vars);
-	if (vars->kkk == 1)
+	else if (vars->kkk == 1 || vars->kkk == 0)
 		s_animation(vars);
-	if (vars->kkk == 2)
+	else if (vars->kkk == 2 || vars->kkk == 0)
 		d_animation(vars);
 	return (0);
 }

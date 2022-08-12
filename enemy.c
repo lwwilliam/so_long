@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:33:26 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/02 11:12:50 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/12 13:37:20 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,18 @@ int	enemy(t_vars *vars)
 
 int	enemy_placement(t_vars *vars)
 {
-	int	x;
-	int	y;
-
-	x = 0;
-	y = 0;
 	vars->enemy_path = GHOST2;
 	enemy(vars);
-	while (x != 320 && y != 320)
+	mlx_put_image_to_window(vars->mlx, vars->win, vars->enemy_img,
+		vars->p2_x, vars->p2_y);
+	if (vars->x == vars->p2_x && vars->y == vars->p2_y)
 	{
-		x += 64;
-		y += 64;
-	}
-	if (x == 320 && y == 320)
-	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->enemy_img,
-			x, y);
-	}
-	if (vars->x == x && vars->y == y)
-	{
-		write(1, "Get good SCRUB!!\n", 18);
+		write(1, "=================================\n", 34);
+		write(1, "number of movement: ", 20);
+		ft_putnbr(vars->n_of_m);
+		write(1, "\n", 1);
+		write(1, "You lost!!\n", 11);
+		write(1, "=================================\n", 34);
 		exit(0);
 	}
 	return (0);

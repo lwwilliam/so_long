@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 17:55:32 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/04 11:19:49 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/05 11:47:25 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include "../so_long.h"
+
+# define BUFFER_SIZE 1000
+// # include "../so_long.h"
 
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s);
@@ -25,5 +27,6 @@ size_t	ft_strlen(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 int		read_funct(int fd, char **buffer, int *x);
+void	free_funct(char **str);
 
 #endif
