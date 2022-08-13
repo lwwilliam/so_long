@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:08:30 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/13 00:42:00 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/13 22:00:05 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int	map_size(t_vars *vars)
 	vars->pixel_w = 0;
 	vars->pixel_h = 0;
 	map_read(vars);
+	map_error(vars);
 	if (vars->map_w != 0)
 		vars->pixel_w = vars->map_w * 64;
 	if (vars->map_h != 0)

@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:03:20 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/13 00:23:53 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/13 21:59:10 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,8 +135,13 @@ void	duptostr(t_vars *vars);
 void	ft_putnbr(int nb);
 void	e_filter(t_vars *vars, int x);
 int		exit_placement(t_vars *vars);
-void	arguments(t_vars *vars, char **av, int ac);
 void	ft_putchar(char c);
+void	arguments(t_vars *vars, char **av, int ac);
+void	error_exit(t_vars *vars);
+void	map_error(t_vars *vars);
+void	map_error2(t_vars *vars);
+void	map_error3(t_vars *vars);
+void	map_error4(int coin, int play, int end);
 // void	xpm_init(t_vars *vars);
 // void	print_test(t_vars *vars);
 
