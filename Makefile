@@ -6,7 +6,7 @@
 #    By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/21 11:38:00 by lwilliam          #+#    #+#              #
-#    Updated: 2022/08/13 21:59:22 by lwilliam         ###   ########.fr        #
+#    Updated: 2022/08/13 22:04:50 by lwilliam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ FLAGS = -Wall -Wextra -Werror
 # 	$(CC) $(FLAGS) -Imlx -c $< -o $@
 
 $(NAME): $(OBJ) fclean
-	$(CC) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME) #-fsanitize=address -g3
+	$(CC) $(FLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME) #-fsanitize=address -g3
 
 all : $(NAME)
 

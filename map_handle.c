@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 11:13:05 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/13 00:51:16 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/13 22:04:19 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	array(t_vars *vars)
 {
 	int		fd;
 	int		map_len;
-	int		x;
 	char	*str;
 
 	map_len = vars->map_h * vars->map_w;
