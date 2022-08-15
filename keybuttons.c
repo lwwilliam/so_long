@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:23:26 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/12 23:08:39 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/15 14:14:17 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	exit_button(t_vars *vars)
 {
-	char	x;
-	char	y;
-
 	write(1, "=================================\n", 34);
 	write(1, "number of movement: ", 20);
 	ft_putnbr(vars->n_of_m);
@@ -24,7 +21,6 @@ int	exit_button(t_vars *vars)
 	write(1, "=================================\n", 34);
 	mlx_destroy_window(vars->mlx, vars->win);
 	write(0, "Exit\n", 5);
-	system("leaks so_long");
 	exit(0);
 }
 

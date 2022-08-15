@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 17:54:25 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/12 23:48:52 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/15 12:21:20 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ size_t	ft_strlen(const char *str)
 	int	x;
 
 	x = 0;
+	if (!str)
+		return (0);
 	while (str[x] != '\0')
 		x++;
 	return (x);

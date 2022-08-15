@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:08:30 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/13 22:00:05 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/15 12:58:50 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	map(t_vars *vars)
 	enemy_placement(vars);
 	coin_placement(vars);
 	character(vars);
+	num_move(vars);
 	return (0);
 }
 
@@ -51,6 +52,7 @@ int	main(int ac, char **av)
 
 	arguments(&vars, av, ac);
 	map_size(&vars);
+	free(vars.dup);
 	item_pos(&vars);
 	win_init(&vars);
 	map_path = MAP;

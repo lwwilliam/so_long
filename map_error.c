@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 21:57:57 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/13 22:00:21 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/15 12:50:15 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	map_error4(int coin, int play, int end)
 	}
 	if (play > 1)
 	{
-		write(1, "Map contain more than one 'E' (player's starting position)\n", 59);
+		write(1, "Map contain more than one 'P' (player's starting position)\n", 59);
 		exit(0);
 	}
 	if (end < 1)

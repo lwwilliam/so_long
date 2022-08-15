@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:03:20 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/13 21:59:10 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/15 12:50:38 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ typedef struct s_vars
 	int		str_pos;
 	int		n_of_m;
 	char	*map_name;
+	int		for_werror;
 }	t_vars;
 
 int		animation(t_vars *vars);
@@ -142,6 +143,8 @@ void	map_error(t_vars *vars);
 void	map_error2(t_vars *vars);
 void	map_error3(t_vars *vars);
 void	map_error4(int coin, int play, int end);
+char	*ft_itoa(int n);
+void	num_move(t_vars *vars);
 // void	xpm_init(t_vars *vars);
 // void	print_test(t_vars *vars);
 

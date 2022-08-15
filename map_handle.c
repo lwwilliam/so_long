@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 11:13:05 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/13 22:04:19 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/15 14:14:23 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	array(t_vars *vars)
 	fd = open(vars->map_name, O_RDONLY);
 	vars->line = get_next_line(fd);
 	vars->dup = malloc(sizeof(char) * (map_len + 1));
-	ft_bzero(vars->dup, map_len + 1);
+	*vars->dup = 0;
 	while (vars->line != NULL)
 	{
 		str = ft_strtrim((char *)vars->line, "\n");

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handle.c                                     :+:      :+:    :+:   */
+/*   error_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 14:41:24 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/13 21:55:51 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/15 11:48:51 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	arguments(t_vars *vars, char **av, int ac)
 void	error_exit(t_vars *vars)
 {
 	vars->for_werror = 0;
-
 	write(1, "MAP ERROR!\n", 11);
 	exit(0);
 }

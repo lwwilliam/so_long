@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   put_str.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 13:21:35 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/15 10:39:18 by lwilliam         ###   ########.fr       */
+/*   Created: 2022/08/15 10:29:37 by lwilliam          #+#    #+#             */
+/*   Updated: 2022/08/15 10:51:27 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_putchar(char c)
+void	num_move(t_vars *vars)
 {
-	write(1, &c, 1);
-}
+	char	*tmp;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		ft_putchar(nb + 48);
-	}
+	tmp = ft_itoa(vars->n_of_m);
+	mlx_string_put(vars->mlx, vars->win, 0, 0,
+		9761790, "number of movement: ");
+	mlx_string_put(vars->mlx, vars->win, 64 * 3, 0,
+		9761790, tmp);
+	free (tmp);
 }
