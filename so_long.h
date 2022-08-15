@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:03:20 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/15 12:50:38 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/15 14:20:02 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 # define COIN2 "./xpm/coin2.xpm"
 # define WALL "./xpm/wall.xpm"
 # define EXIT "./xpm/exit.xpm"
-# define FRAME 8
+# define FRAME 10
 
 // typedef struct s_xpm {
 // 	void	*close;
