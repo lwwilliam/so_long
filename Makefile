@@ -6,7 +6,7 @@
 #    By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/21 11:38:00 by lwilliam          #+#    #+#              #
-#    Updated: 2022/08/15 14:38:02 by lwilliam         ###   ########.fr        #
+#    Updated: 2022/08/15 20:56:15 by lwilliam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,11 @@ $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean : 
-	rm -rf *.o ./gnl/*.o
+	rm -f *.o ./gnl/*.o
 
 fclean : clean
 	rm -f so_long
 	
 re: fclean all
+
+.PHONY : $(NAME)

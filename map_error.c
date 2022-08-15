@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 21:57:57 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/15 14:50:57 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/15 20:11:54 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	map_error2(t_vars *vars)
 		x++;
 	}
 	map_error3(vars);
+	map_unknown(vars, tmp);
 }
 
 void	map_error3(t_vars *vars)
@@ -120,5 +121,19 @@ void	map_error4(int play, int end)
 	{
 		write(1, "Map contain more than one 'E' (map exit)\n", 41);
 		exit(0);
+	}
+}
+
+void	map_unknown(t_vars *vars, char *tmp)
+{
+	int	x;
+
+	x = 0;
+	while (tmp[x])
+	{
+		if (tmp[x] != 'C' && tmp[x] != 'E' && tmp[x] != 'P'
+			&& tmp[x] != '0' && tmp[x] != '1' && tmp[x] != 'B')
+			error_exit(vars);
+	x++;
 	}
 }

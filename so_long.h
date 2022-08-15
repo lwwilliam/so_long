@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 11:03:20 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/15 14:50:22 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/15 20:04:11 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,7 @@ void	map_error3(t_vars *vars);
 void	map_error4(int play, int end);
 char	*ft_itoa(int n);
 void	num_move(t_vars *vars);
+void	map_unknown(t_vars *vars, char *tmp);
 // void	xpm_init(t_vars *vars);
 // void	print_test(t_vars *vars);
 
