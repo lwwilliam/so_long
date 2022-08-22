@@ -6,7 +6,7 @@
 /*   By: lwilliam <lwilliam@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 21:57:57 by lwilliam          #+#    #+#             */
-/*   Updated: 2022/08/15 20:11:54 by lwilliam         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:27:07 by lwilliam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,13 +127,22 @@ void	map_error4(int play, int end)
 void	map_unknown(t_vars *vars, char *tmp)
 {
 	int	x;
+	int	b_count;
 
 	x = 0;
+	b_count = 0;
 	while (tmp[x])
 	{
 		if (tmp[x] != 'C' && tmp[x] != 'E' && tmp[x] != 'P'
 			&& tmp[x] != '0' && tmp[x] != '1' && tmp[x] != 'B')
 			error_exit(vars);
+		if (tmp[x] == 'B')
+			b_count++;
+		if (b_count > 1)
+		{
+			write(1, "Map contain more than one 'B' (enemy)\n", 38);
+			exit(0);
+		}
 	x++;
 	}
 }
